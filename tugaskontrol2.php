@@ -1,41 +1,49 @@
 <?php
-// Program menampilkan stok sepatu 100 - 1000 dalam bentuk tabel berwarna
+echo "<h2>Studi Kasus: Stok Sepatu Toko Sport</h2>";
 
-echo "<h2>Daftar Stok Sepatu Toko Sport</h2>";
-echo "<table border='1' cellpadding='8' cellspacing='0' style='border-collapse:collapse; width:80%; text-align:center;'>";
-
-// Header tabel
-echo "<tr style='background-color: #333; color: white;'>
-        <th>No</th>
-        <th>Nomor Sepatu</th>
-        <th>Status Stok</th>
-      </tr>";
-
-// Perulangan dari 100 sampai 1000
-$no = 1;
-for ($i = 100; $i <= 1000; $i++) {
-    
-    // Tentukan status stok
+// CONTOH IF ELSE → menentukan kondisi stok
+for ($i = 100; $i <= 110; $i++) { // contoh ditampilkan 100-110 biar tidak terlalu panjang
     if ($i % 100 == 0) {
-        $status = "DISKON";
-        $warna = "#4CAF50"; // hijau
+        echo "Sepatu nomor $i = DISKON <br>";
     } elseif ($i % 50 == 0) {
-        $status = "MENIPIS";
-        $warna = "#FFC107"; // kuning
+        echo "Sepatu nomor $i = MENIPIS <br>";
     } else {
-        $status = "TERSEDIA";
-        $warna = "#2196F3"; // biru
+        echo "Sepatu nomor $i = TERSEDIA <br>";
     }
-
-    // Cetak baris tabel
-    echo "<tr style='background-color: $warna; color: white;'>
-            <td>$no</td>
-            <td>Sepatu nomor $i</td>
-            <td><b>$status</b></td>
-          </tr>";
-    $no++;
 }
 
-echo "</table>";
-echo "<p><b>Total stok sepatu dari nomor 100 sampai 1000 adalah: " . (1000 - 100 + 1) . " pasang.</b></p>";
+echo "<hr>";
+
+// CONTOH SWITCH → cek nomor sepatu tertentu
+$sepatu = 150;
+echo "Cek status sepatu nomor $sepatu dengan SWITCH: <br>";
+switch($sepatu) {
+    case 150:
+        echo "Sepatu nomor 150 stoknya MENIPIS<br>";
+        break;
+    case 200:
+        echo "Sepatu nomor 200 sedang DISKON<br>";
+        break;
+    default:
+        echo "Sepatu tersedia<br>";
+        break;
+}
+
+echo "<hr>";
+
+// CONTOH FOR → menampilkan looping stok
+echo "CONTOH FOR (sepatu 100-105): <br>";
+for ($i = 100; $i <= 105; $i++) {
+    echo "Sepatu nomor $i tersedia di gudang<br>";
+}
+
+echo "<hr>";
+
+// CONTOH WHILE → menampilkan looping stok
+echo "CONTOH WHILE (sepatu 995-1000): <br>";
+$j = 995;
+while ($j <= 1000) {
+    echo "Sepatu nomor $j tersedia di gudang<br>";
+    $j++;
+}
 ?>
